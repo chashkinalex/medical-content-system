@@ -9,7 +9,7 @@
         "hypertension", "diabetes", "pneumonia", "heart failure",
         "internal_medicine", "general_practice", "diagnostic"
       ],
-      "priority_sources": ["acp", "annals_internal_medicine", "nejm", "bmj"],
+      "priority_sources": ["acp", "annals_internal_medicine", "archives_internal_medicine", "mayo_clinic_proceedings", "nejm", "bmj"],
       "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "practice_pearl"],
       "scoring_weights": {
         "clinical_significance": 6,
@@ -30,7 +30,7 @@
         "vaccination", "growth", "development", "pediatric_emergency",
         "neonatology", "pediatric_cardiology", "pediatric_neurology"
       ],
-      "priority_sources": ["aap", "pediatrics", "nejm", "lancet"],
+      "priority_sources": ["aap", "pediatrics", "jama_pediatrics", "pediatric_research", "nejm", "lancet"],
       "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "myth_fact"],
       "scoring_weights": {
         "clinical_significance": 6,
@@ -51,7 +51,7 @@
         "endoscopy", "IBD", "Crohn's", "ulcerative_colitis", "GERD",
         "hepatitis", "cirrhosis", "pancreatitis", "celiac_disease"
       ],
-      "priority_sources": ["aga", "gastroenterology", "nejm", "lancet"],
+      "priority_sources": ["aga", "gastroenterology", "american_journal_gastroenterology", "gut", "nejm", "lancet"],
       "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "tool_of_day"],
       "scoring_weights": {
         "clinical_significance": 5,
@@ -72,7 +72,7 @@
         "metabolic", "obesity", "adrenal", "pituitary", "parathyroid",
         "diabetes_mellitus", "hypothyroidism", "hyperthyroidism"
       ],
-      "priority_sources": ["ada", "diabetes_care", "jcem", "nejm"],
+      "priority_sources": ["ada", "diabetes_care", "jcem", "diabetes", "endocrinology", "nejm"],
       "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "practice_pearl"],
       "scoring_weights": {
         "clinical_significance": 6,
@@ -93,7 +93,7 @@
         "menopause", "contraception", "fertility", "prenatal",
         "postpartum", "gynecological_cancer", "endometriosis", "PCOS"
       ],
-      "priority_sources": ["acog", "obstetrics_gynecology", "nejm", "lancet"],
+      "priority_sources": ["acog", "obstetrics_gynecology", "fertility_sterility", "human_reproduction", "nejm", "lancet"],
       "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "myth_fact"],
       "scoring_weights": {
         "clinical_significance": 6,
@@ -114,7 +114,7 @@
         "infarction", "arrhythmia", "hypertension", "heart_failure",
         "coronary", "valvular", "echocardiography", "ECG", "angina"
       ],
-      "priority_sources": ["acc_aha", "ehj", "circulation", "nejm"],
+      "priority_sources": ["acc_aha", "ehj", "circulation", "jacc", "heart", "nejm"],
       "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "tool_of_day"],
       "scoring_weights": {
         "clinical_significance": 6,
@@ -135,7 +135,7 @@
         "migraine", "dementia", "Alzheimer's", "Parkinson's", "MS",
         "seizure", "headache", "neuropathy", "cerebrovascular"
       ],
-      "priority_sources": ["aan", "neurology", "nejm", "lancet"],
+      "priority_sources": ["aan", "neurology", "brain", "annals_neurology", "nejm", "lancet"],
       "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "practice_pearl"],
       "scoring_weights": {
         "clinical_significance": 6,
