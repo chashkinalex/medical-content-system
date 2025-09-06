@@ -538,6 +538,83 @@
       "enabled": true,
       "updateInterval": 7200000,
       "tags": ["cdc", "public-health", "surveillance"]
+    },
+    {
+      "id": "telegram_cardiology",
+      "name": "Telegram Cardiology Channels",
+      "url": "http://localhost:8080/cardiology",
+      "level": "C",
+      "specialization": "cardiology",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 300000,
+      "tags": ["telegram", "cardiology", "social", "professional"]
+    },
+    {
+      "id": "telegram_pediatrics",
+      "name": "Telegram Pediatrics Channels",
+      "url": "http://localhost:8080/pediatrics",
+      "level": "C",
+      "specialization": "pediatrics",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 300000,
+      "tags": ["telegram", "pediatrics", "social", "professional"]
+    },
+    {
+      "id": "telegram_gastroenterology",
+      "name": "Telegram Gastroenterology Channels",
+      "url": "http://localhost:8080/gastroenterology",
+      "level": "C",
+      "specialization": "gastroenterology",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 300000,
+      "tags": ["telegram", "gastroenterology", "social", "professional"]
+    },
+    {
+      "id": "telegram_endocrinology",
+      "name": "Telegram Endocrinology Channels",
+      "url": "http://localhost:8080/endocrinology",
+      "level": "C",
+      "specialization": "endocrinology",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 300000,
+      "tags": ["telegram", "endocrinology", "social", "professional"]
+    },
+    {
+      "id": "telegram_gynecology",
+      "name": "Telegram Gynecology Channels",
+      "url": "http://localhost:8080/gynecology",
+      "level": "C",
+      "specialization": "gynecology",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 300000,
+      "tags": ["telegram", "gynecology", "social", "professional"]
+    },
+    {
+      "id": "telegram_neurology",
+      "name": "Telegram Neurology Channels",
+      "url": "http://localhost:8080/neurology",
+      "level": "C",
+      "specialization": "neurology",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 300000,
+      "tags": ["telegram", "neurology", "social", "professional"]
+    },
+    {
+      "id": "telegram_therapy",
+      "name": "Telegram Therapy Channels",
+      "url": "http://localhost:8080/therapy",
+      "level": "C",
+      "specialization": "therapy",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 300000,
+      "tags": ["telegram", "therapy", "social", "professional"]
     }
   ],
   "settings": {
