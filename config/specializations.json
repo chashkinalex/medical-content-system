@@ -1,0 +1,159 @@
+{
+  "specializations": {
+    "therapy": {
+      "name": "Кафедра терапии",
+      "telegram_channel": "@kafedra_terapii",
+      "description": "Внутренние болезни, общая терапия, диагностика",
+      "keywords": [
+        "internal medicine", "diagnosis", "treatment", "symptoms",
+        "hypertension", "diabetes", "pneumonia", "heart failure",
+        "internal_medicine", "general_practice", "diagnostic"
+      ],
+      "priority_sources": ["acp", "annals_internal_medicine", "nejm", "bmj"],
+      "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "practice_pearl"],
+      "scoring_weights": {
+        "clinical_significance": 6,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "applicability": 5,
+        "controversy": 3
+      },
+      "publication_schedule": "0 9,15,21 * * *",
+      "max_posts_per_day": 3
+    },
+    "pediatrics": {
+      "name": "Кафедра педиатрии",
+      "telegram_channel": "@kafedra_pediatrii",
+      "description": "Детские болезни, педиатрическая диагностика и лечение",
+      "keywords": [
+        "pediatrics", "children", "infant", "adolescent", "childhood",
+        "vaccination", "growth", "development", "pediatric_emergency",
+        "neonatology", "pediatric_cardiology", "pediatric_neurology"
+      ],
+      "priority_sources": ["aap", "pediatrics", "nejm", "lancet"],
+      "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "myth_fact"],
+      "scoring_weights": {
+        "clinical_significance": 6,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "applicability": 5,
+        "controversy": 4
+      },
+      "publication_schedule": "0 8,14,20 * * *",
+      "max_posts_per_day": 3
+    },
+    "gastroenterology": {
+      "name": "Кафедра гастроэнтерологии",
+      "telegram_channel": "@kafedra_gastro",
+      "description": "Заболевания ЖКТ, эндоскопия, гепатология",
+      "keywords": [
+        "gastroenterology", "gastrointestinal", "liver", "hepatology",
+        "endoscopy", "IBD", "Crohn's", "ulcerative_colitis", "GERD",
+        "hepatitis", "cirrhosis", "pancreatitis", "celiac_disease"
+      ],
+      "priority_sources": ["aga", "gastroenterology", "nejm", "lancet"],
+      "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "tool_of_day"],
+      "scoring_weights": {
+        "clinical_significance": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "applicability": 5,
+        "controversy": 3
+      },
+      "publication_schedule": "0 10,16,22 * * *",
+      "max_posts_per_day": 2
+    },
+    "endocrinology": {
+      "name": "Кафедра эндокринологии",
+      "telegram_channel": "@kafedra_endocrinology",
+      "description": "Эндокринные заболевания, диабет, щитовидная железа",
+      "keywords": [
+        "endocrinology", "diabetes", "thyroid", "hormones", "insulin",
+        "metabolic", "obesity", "adrenal", "pituitary", "parathyroid",
+        "diabetes_mellitus", "hypothyroidism", "hyperthyroidism"
+      ],
+      "priority_sources": ["ada", "diabetes_care", "jcem", "nejm"],
+      "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "practice_pearl"],
+      "scoring_weights": {
+        "clinical_significance": 6,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "applicability": 5,
+        "controversy": 4
+      },
+      "publication_schedule": "0 9,15,21 * * *",
+      "max_posts_per_day": 3
+    },
+    "gynecology": {
+      "name": "Кафедра гинекологии",
+      "telegram_channel": "@kafedra_gyn",
+      "description": "Гинекология, акушерство, женское здоровье",
+      "keywords": [
+        "gynecology", "obstetrics", "women's_health", "pregnancy",
+        "menopause", "contraception", "fertility", "prenatal",
+        "postpartum", "gynecological_cancer", "endometriosis", "PCOS"
+      ],
+      "priority_sources": ["acog", "obstetrics_gynecology", "nejm", "lancet"],
+      "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "myth_fact"],
+      "scoring_weights": {
+        "clinical_significance": 6,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "applicability": 5,
+        "controversy": 5
+      },
+      "publication_schedule": "0 8,14,20 * * *",
+      "max_posts_per_day": 3
+    },
+    "cardiology": {
+      "name": "Кафедра кардиологии",
+      "telegram_channel": "@kafedra_cardiology",
+      "description": "Сердечно-сосудистые заболевания, кардиология",
+      "keywords": [
+        "cardiology", "cardiovascular", "heart", "cardiac", "myocardial",
+        "infarction", "arrhythmia", "hypertension", "heart_failure",
+        "coronary", "valvular", "echocardiography", "ECG", "angina"
+      ],
+      "priority_sources": ["acc_aha", "ehj", "circulation", "nejm"],
+      "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "tool_of_day"],
+      "scoring_weights": {
+        "clinical_significance": 6,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "applicability": 5,
+        "controversy": 3
+      },
+      "publication_schedule": "0 9,15,21 * * *",
+      "max_posts_per_day": 3
+    },
+    "neurology": {
+      "name": "Кафедра неврологии",
+      "telegram_channel": "@kafedra_neurology",
+      "description": "Неврологические заболевания, головной мозг, нервная система",
+      "keywords": [
+        "neurology", "neurological", "brain", "stroke", "epilepsy",
+        "migraine", "dementia", "Alzheimer's", "Parkinson's", "MS",
+        "seizure", "headache", "neuropathy", "cerebrovascular"
+      ],
+      "priority_sources": ["aan", "neurology", "nejm", "lancet"],
+      "content_types": ["guidelines_update", "trial_analysis", "clinical_case", "practice_pearl"],
+      "scoring_weights": {
+        "clinical_significance": 6,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "applicability": 5,
+        "controversy": 4
+      },
+      "publication_schedule": "0 10,16,22 * * *",
+      "max_posts_per_day": 2
+    }
+  },
+  "settings": {
+    "default_publication_schedule": "0 9,15,21 * * *",
+    "max_posts_per_specialization_per_day": 3,
+    "content_rotation_enabled": true,
+    "cross_specialization_sharing": false,
+    "priority_specializations": ["cardiology", "endocrinology", "therapy"],
+    "backup_specializations": ["pediatrics", "neurology", "gynecology", "gastroenterology"]
+  }
+}

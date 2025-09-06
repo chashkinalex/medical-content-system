@@ -109,6 +109,182 @@
       "enabled": true,
       "updateInterval": 7200000,
       "tags": ["regulations", "russia", "ministry"]
+    },
+    {
+      "id": "acc_aha",
+      "name": "American College of Cardiology / American Heart Association",
+      "url": "https://www.acc.org/rss",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "cardiology", "society"]
+    },
+    {
+      "id": "ehj",
+      "name": "European Heart Journal",
+      "url": "https://academic.oup.com/eurheartj/rss/current",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "cardiology", "research"]
+    },
+    {
+      "id": "circulation",
+      "name": "Circulation",
+      "url": "https://www.ahajournals.org/action/showFeed?type=etoc&feed=rss&jc=circ",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "cardiology", "research"]
+    },
+    {
+      "id": "aap",
+      "name": "American Academy of Pediatrics",
+      "url": "https://publications.aap.org/rss",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "pediatrics", "society"]
+    },
+    {
+      "id": "pediatrics",
+      "name": "Pediatrics Journal",
+      "url": "https://publications.aap.org/pediatrics/rss/current",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "pediatrics", "research"]
+    },
+    {
+      "id": "aga",
+      "name": "American Gastroenterological Association",
+      "url": "https://www.gastrojournal.org/action/showFeed?type=etoc&feed=rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "gastroenterology", "society"]
+    },
+    {
+      "id": "gastroenterology",
+      "name": "Gastroenterology",
+      "url": "https://www.gastrojournal.org/action/showFeed?type=etoc&feed=rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gastroenterology", "research"]
+    },
+    {
+      "id": "ada",
+      "name": "American Diabetes Association",
+      "url": "https://diabetesjournals.org/rss",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "endocrinology", "diabetes"]
+    },
+    {
+      "id": "diabetes_care",
+      "name": "Diabetes Care",
+      "url": "https://diabetesjournals.org/care/rss/current",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "endocrinology", "diabetes"]
+    },
+    {
+      "id": "jcem",
+      "name": "Journal of Clinical Endocrinology & Metabolism",
+      "url": "https://academic.oup.com/jcem/rss/current",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "endocrinology", "research"]
+    },
+    {
+      "id": "acog",
+      "name": "American College of Obstetricians and Gynecologists",
+      "url": "https://www.acog.org/rss",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "gynecology", "society"]
+    },
+    {
+      "id": "obstetrics_gynecology",
+      "name": "Obstetrics & Gynecology",
+      "url": "https://journals.lww.com/greenjournal/rss/current.xml",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gynecology", "research"]
+    },
+    {
+      "id": "aan",
+      "name": "American Academy of Neurology",
+      "url": "https://www.aan.com/rss",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "neurology", "society"]
+    },
+    {
+      "id": "neurology",
+      "name": "Neurology",
+      "url": "https://n.neurology.org/rss/current.xml",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "neurology", "research"]
+    },
+    {
+      "id": "acp",
+      "name": "American College of Physicians",
+      "url": "https://www.acponline.org/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "internal_medicine", "society"]
+    },
+    {
+      "id": "annals_internal_medicine",
+      "name": "Annals of Internal Medicine",
+      "url": "https://www.acpjournals.org/action/showFeed?type=etoc&feed=rss&jc=aim",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "internal_medicine", "research"]
     }
   ],
   "settings": {

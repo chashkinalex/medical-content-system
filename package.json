@@ -8,7 +8,9 @@
     "help": "echo '📚 Доступные команды:' && echo '  npm run setup       - Первоначальная настройка' && echo '  npm run collect     - Сбор контента из источников' && echo '  npm run process     - Обработка собранного контента' && echo '  npm run score       - Скоринг контента' && echo '  npm run generate    - Генерация постов' && echo '  npm run publish     - Публикация в Telegram' && echo '  npm run monitor     - Мониторинг источников' && echo '  npm run analytics   - Аналитика и отчеты'",
     
     "setup": "echo '🛠️ Настройка системы...' && node scripts/setup.js",
-    "collect": "echo '📥 Сбор контента...' && node scripts/collect.js",
+    "collect": "echo '📥 Сбор контента...' && node index.js collect",
+    "collect:test": "echo '🧪 Тестирование сбора контента...' && node scripts/test-collection.js",
+    "init:sources": "echo '🔧 Инициализация источников...' && node scripts/init-sources.js",
     "process": "echo '⚙️ Обработка контента...' && node scripts/process.js",
     "score": "echo '📊 Скоринг контента...' && node scripts/score.js",
     "generate": "echo '✍️ Генерация постов...' && node scripts/generate.js",
