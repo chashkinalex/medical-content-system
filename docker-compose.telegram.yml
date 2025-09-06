@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  telegram-to-rss:
+    image: aigoncharov/telegram-to-rss:latest
+    container_name: telegram-to-rss
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - TELEGRAM_API_ID=${TELEGRAM_API_ID}
+      - TELEGRAM_API_HASH=${TELEGRAM_API_HASH}
+      - TELEGRAM_PHONE=${TELEGRAM_PHONE}
+      - TELEGRAM_SESSION_STRING=${TELEGRAM_SESSION_STRING}
+      - UPDATE_INTERVAL=300000
+      - MAX_POSTS_PER_CHANNEL=50
+      - LOG_LEVEL=info
+    volumes:
+      - ./data/telegram-sessions:/app/sessions
+      - ./config/telegram-to-rss-config.json:/app/config.json:ro
+      - ./logs/telegram-to-rss:/app/logs
+    networks:
+      - medical-content-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Альтернативный сервис RSSHub для Telegram каналов
+  rsshub:
+    image: diygod/rsshub:latest
+    container_name: rsshub
+    restart: unless-stopped
+    ports:
+      - "1200:1200"
+    environment:
+      - NODE_ENV=production
+      - CACHE_TYPE=redis
+      - REDIS_URL=redis://redis:6379/
+      - PUPPETEER_WS_ENDPOINT=ws://browserless:3000
+    volumes:
+      - ./data/rsshub:/app/data
+    networks:
+      - medical-content-network
+    depends_on:
+      - redis
+      - browserless
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+    volumes:
+      - ./data/redis:/data
+    networks:
+      - medical-content-network
+
+  browserless:
+    image: browserless/chrome:latest
+    container_name: browserless
+    restart: unless-stopped
+    environment:
+      - PREBOOT_CHROME=true
+      - KEEP_ALIVE=true
+    networks:
+      - medical-content-network
+
+networks:
+  medical-content-network:
+    driver: bridge
+
+volumes:
+  telegram-sessions:
+  rsshub-data:
+  redis-data:

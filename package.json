@@ -6,31 +6,30 @@
   "scripts": {
     "start": "echo '🏥 Medical Content System - Выберите команду:' && npm run help",
     "help": "echo '📚 Доступные команды:' && echo '  npm run setup       - Первоначальная настройка' && echo '  npm run collect     - Сбор контента из источников' && echo '  npm run process     - Обработка собранного контента' && echo '  npm run score       - Скоринг контента' && echo '  npm run generate    - Генерация постов' && echo '  npm run publish     - Публикация в Telegram' && echo '  npm run monitor     - Мониторинг источников' && echo '  npm run analytics   - Аналитика и отчеты'",
-    
     "setup": "echo '🛠️ Настройка системы...' && node scripts/setup.js",
     "collect": "echo '📥 Сбор контента...' && node index.js collect",
     "collect:test": "echo '🧪 Тестирование сбора контента...' && node scripts/test-collection.js",
     "init:sources": "echo '🔧 Инициализация источников...' && node scripts/init-sources.js",
+    "extract:telegram": "echo '📱 Извлечение Telegram каналов...' && node scripts/extract-telegram-channels.js",
+    "setup:telegram": "echo '⚙️ Настройка telegram-to-rss...' && node scripts/setup-telegram-to-rss.js",
+    "start:telegram": "echo '🚀 Запуск telegram-to-rss...' && ./scripts/start-telegram-to-rss.sh",
+    "stop:telegram": "echo '🛑 Остановка telegram-to-rss...' && ./scripts/stop-telegram-to-rss.sh",
     "process": "echo '⚙️ Обработка контента...' && node scripts/process.js",
     "score": "echo '📊 Скоринг контента...' && node scripts/score.js",
     "generate": "echo '✍️ Генерация постов...' && node scripts/generate.js",
     "publish": "echo '📤 Публикация в Telegram...' && node scripts/publish.js",
     "monitor": "echo '👁️ Мониторинг источников...' && node scripts/monitor.js",
     "analytics": "echo '📈 Аналитика...' && node scripts/analytics.js",
-    
     "dev": "echo '🔧 Режим разработки...' && nodemon index.js",
     "test": "echo '🧪 Тестирование...' && jest",
     "lint": "echo '🔍 Проверка кода...' && eslint .",
     "format": "echo '✨ Форматирование кода...' && prettier --write .",
-    
     "git:status": "echo '📊 Статус Git...' && git status",
     "git:commit": "echo '💾 Коммит изменений...' && git add . && git commit -m 'Update: $(date)'",
     "git:push": "echo '🚀 Отправка на GitHub...' && git push origin main",
     "git:sync": "npm run git:commit && npm run git:push",
-    
     "backup": "echo '💾 Создание резервной копии...' && node scripts/backup.js",
     "restore": "echo '🔄 Восстановление из резервной копии...' && node scripts/restore.js",
-    
     "health": "echo '🏥 Проверка здоровья системы...' && node scripts/health-check.js",
     "logs": "echo '📋 Просмотр логов...' && tail -f logs/system.log"
   },
@@ -61,19 +60,20 @@
   "dependencies": {
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "node-cron": "^3.0.3",
     "rss-parser": "^3.13.0",
-    "telegram-bot-api": "^2.0.1",
-    "dotenv": "^16.3.1",
-    "winston": "^3.11.0",
     "sqlite3": "^5.1.6",
-    "moment": "^2.29.4",
-    "lodash": "^4.17.21"
+    "telegram-bot-api": "^2.0.1",
+    "winston": "^3.11.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1",
-    "jest": "^29.7.0",
     "eslint": "^8.54.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
     "prettier": "^3.1.0"
   }
 }
