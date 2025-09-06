@@ -21,6 +21,7 @@
     "score:content": "echo '📊 Скоринг контента...' && node scripts/score.js",
     "generate:posts": "echo '✍️ Генерация постов...' && node scripts/generate.js",
     "test:pipeline": "echo '🧪 Тестирование полного пайплайна...' && node scripts/test-full-pipeline.js",
+    "update:database": "echo '🔄 Обновление схемы базы данных...' && node scripts/update-database-schema.js",
     "init:sources": "echo '🔧 Инициализация источников...' && node scripts/init-sources.js",
     "extract:telegram": "echo '📱 Извлечение Telegram каналов...' && node scripts/extract-telegram-channels.js",
     "setup:telegram": "echo '⚙️ Настройка telegram-to-rss...' && node scripts/setup-telegram-to-rss.js",

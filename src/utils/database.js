@@ -362,6 +362,344 @@ class Database {
     }
 
     /**
+     * Получение необработанных статей
+     */
+    async getRawArticles() {
+        return await this.all(`
+            SELECT * FROM articles 
+            WHERE processed = 0 AND status = 'collected'
+            ORDER BY collected_date ASC
+        `);
+    }
+
+    /**
+     * Получение неоцененных статей
+     */
+    async getUnscoredArticles() {
+        return await this.all(`
+            SELECT * FROM articles 
+            WHERE scored = 0 AND processed = 1 AND status = 'processed'
+            ORDER BY processed_date ASC
+        `);
+    }
+
+    /**
+     * Получение статей для генерации постов
+     */
+    async getArticlesForPostGeneration() {
+        return await this.all(`
+            SELECT a.*, s.total_score, s.quality_level
+            FROM articles a
+            LEFT JOIN scoring s ON a.id = s.article_id
+            WHERE a.scored = 1 AND s.total_score >= 15 AND a.status = 'scored'
+            ORDER BY s.total_score DESC, a.published_date DESC
+        `);
+    }
+
+    /**
+     * Получение постов для премодерации
+     */
+    async getPostsForModeration() {
+        return await this.all(`
+            SELECT p.*, a.title as article_title, a.source_name
+            FROM posts p
+            LEFT JOIN articles a ON p.article_id = a.id
+            WHERE p.moderation_status = 'pending'
+            ORDER BY p.generated_date ASC
+        `);
+    }
+
+    /**
+     * Получение постов для премодерации по специальности
+     */
+    async getPostsForModerationBySpecialization(specialization) {
+        return await this.all(`
+            SELECT p.*, a.title as article_title, a.source_name
+            FROM posts p
+            LEFT JOIN articles a ON p.article_id = a.id
+            WHERE p.moderation_status = 'pending' AND p.specialization = ?
+            ORDER BY p.generated_date ASC
+        `, [specialization]);
+    }
+
+    /**
+     * Получение одобренных постов для публикации
+     */
+    async getApprovedPostsForPublishing(contentTypes = []) {
+        let sql = `
+            SELECT p.*, a.title as article_title, a.source_name
+            FROM posts p
+            LEFT JOIN articles a ON p.article_id = a.id
+            WHERE p.moderation_status = 'approved' AND p.status = 'generated'
+        `;
+        
+        if (contentTypes.length > 0) {
+            const placeholders = contentTypes.map(() => '?').join(',');
+            sql += ` AND p.post_type IN (${placeholders})`;
+        }
+        
+        sql += ` ORDER BY p.generated_date ASC`;
+        
+        return await this.all(sql, contentTypes);
+    }
+
+    /**
+     * Получение постов для доработки
+     */
+    async getPostsForRevision() {
+        return await this.all(`
+            SELECT p.*, a.title as article_title, a.source_name
+            FROM posts p
+            LEFT JOIN articles a ON p.article_id = a.id
+            WHERE p.moderation_status = 'revision' AND p.revision_status = 'pending'
+            ORDER BY p.decision_date ASC
+        `);
+    }
+
+    /**
+     * Сохранение обработанной статьи
+     */
+    async saveProcessedArticle(article) {
+        return await this.run(`
+            UPDATE articles SET
+                title = ?, content = ?, summary = ?, authors = ?, keywords = ?,
+                language = ?, content_type = ?, content_category = ?, quality_score = ?,
+                content_hash = ?, word_count = ?, reading_time = ?, processed_date = ?,
+                processed = 1, status = 'processed', updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?
+        `, [
+            article.title, article.content, article.summary, 
+            JSON.stringify(article.authors), JSON.stringify(article.keywords),
+            article.language, article.content_type, article.content_category, article.quality_score,
+            article.content_hash, article.word_count, article.reading_time, article.processed_date,
+            article.id
+        ]);
+    }
+
+    /**
+     * Сохранение скоринга статьи
+     */
+    async saveArticleScore(articleId, score) {
+        return await this.run(`
+            INSERT OR REPLACE INTO scoring (
+                article_id, scientific_basis, relevance, practicality, total_score,
+                quality_level, breakdown, source_quality, evidence_level, freshness,
+                clinical_applicability, methodology_quality, scored_date
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+        `, [
+            articleId, score.scientific_basis, score.relevance, score.practicality, score.total_score,
+            score.quality_level, JSON.stringify(score.breakdown), score.breakdown.source_quality,
+            score.breakdown.evidence_level, score.breakdown.freshness, score.breakdown.clinical_applicability,
+            score.breakdown.methodology_quality
+        ]);
+    }
+
+    /**
+     * Сохранение сгенерированного поста
+     */
+    async saveGeneratedPost(post) {
+        return await this.run(`
+            INSERT INTO posts (
+                article_id, specialization, post_type, title, content, summary,
+                key_points, practical_application, source_name, source_url, score,
+                generated_date, status, moderation_status, hashtags, word_count, reading_time
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'generated', 'pending', ?, ?, ?)
+        `, [
+            post.article_id, post.specialization, post.post_type, post.title, post.content, post.summary,
+            JSON.stringify(post.key_points), post.practical_application, post.source_name, post.source_url, post.score,
+            post.generated_date, JSON.stringify(post.hashtags), post.word_count, post.reading_time
+        ]);
+    }
+
+    /**
+     * Обновление статуса премодерации поста
+     */
+    async updatePostModerationStatus(postId, decision, moderatorId) {
+        return await this.run(`
+            UPDATE posts SET
+                moderation_status = ?, moderator_decision = ?, decision_date = CURRENT_TIMESTAMP,
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?
+        `, [decision, decision, postId]);
+    }
+
+    /**
+     * Сохранение комментария для доработки
+     */
+    async saveRevisionComment(postId, comment, moderatorId) {
+        return await this.run(`
+            UPDATE posts SET
+                revision_comment = ?, revision_status = 'pending', updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?
+        `, [comment, postId]);
+    }
+
+    /**
+     * Обновление статуса публикации поста
+     */
+    async updatePostPublishingStatus(postId, status, messageId) {
+        return await this.run(`
+            UPDATE posts SET
+                status = ?, telegram_message_id = ?, published_date = CURRENT_TIMESTAMP,
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?
+        `, [status, messageId, postId]);
+    }
+
+    /**
+     * Обновление доработанного поста
+     */
+    async updateRevisedPost(postId, revisedContent) {
+        return await this.run(`
+            UPDATE posts SET
+                content = ?, revision_status = 'completed', completed_date = CURRENT_TIMESTAMP,
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?
+        `, [revisedContent, postId]);
+    }
+
+    /**
+     * Получение статистики премодерации
+     */
+    async getModerationStats() {
+        const stats = await this.get(`
+            SELECT 
+                COUNT(CASE WHEN moderation_status = 'pending' THEN 1 END) as pending,
+                COUNT(CASE WHEN moderation_status = 'approved' THEN 1 END) as approved,
+                COUNT(CASE WHEN moderation_status = 'rejected' THEN 1 END) as rejected,
+                COUNT(CASE WHEN moderation_status = 'revision' THEN 1 END) as revision,
+                COUNT(*) as total_week
+            FROM posts 
+            WHERE generated_date >= datetime('now', '-7 days')
+        `);
+
+        const approvalRate = stats.total_week > 0 ? 
+            Math.round((stats.approved / stats.total_week) * 100) : 0;
+
+        return {
+            ...stats,
+            approval_rate: approvalRate,
+            specializations: 7 // Количество специальностей
+        };
+    }
+
+    /**
+     * Получение тестовых источников
+     */
+    async getTestSources(limit = 3) {
+        return await this.all(`
+            SELECT * FROM sources 
+            WHERE enabled = 1 
+            ORDER BY RANDOM() 
+            LIMIT ?
+        `, [limit]);
+    }
+
+    /**
+     * Получение количества необработанных статей
+     */
+    async getRawArticlesCount() {
+        const result = await this.get('SELECT COUNT(*) as count FROM articles WHERE processed = 0');
+        return result.count;
+    }
+
+    /**
+     * Получение количества обработанных статей
+     */
+    async getProcessedArticlesCount() {
+        const result = await this.get('SELECT COUNT(*) as count FROM articles WHERE processed = 1');
+        return result.count;
+    }
+
+    /**
+     * Получение количества оцененных статей
+     */
+    async getScoredArticlesCount() {
+        const result = await this.get('SELECT COUNT(*) as count FROM articles WHERE scored = 1');
+        return result.count;
+    }
+
+    /**
+     * Получение количества сгенерированных постов
+     */
+    async getGeneratedPostsCount() {
+        const result = await this.get('SELECT COUNT(*) as count FROM posts WHERE status = "generated"');
+        return result.count;
+    }
+
+    /**
+     * Получение постов по специальностям
+     */
+    async getPostsBySpecialization() {
+        const results = await this.all(`
+            SELECT specialization, COUNT(*) as count 
+            FROM posts 
+            WHERE status = 'generated'
+            GROUP BY specialization
+        `);
+        
+        const stats = {};
+        results.forEach(row => {
+            stats[row.specialization] = row.count;
+        });
+        
+        return stats;
+    }
+
+    /**
+     * Получение распределения скоринга
+     */
+    async getScoreDistribution() {
+        const results = await this.all(`
+            SELECT quality_level, COUNT(*) as count 
+            FROM scoring 
+            GROUP BY quality_level
+        `);
+        
+        const stats = {};
+        results.forEach(row => {
+            stats[row.quality_level] = row.count;
+        });
+        
+        return stats;
+    }
+
+    /**
+     * Очистка тестовых данных
+     */
+    async cleanupTestData() {
+        await this.run('DELETE FROM posts WHERE status = "generated"');
+        await this.run('DELETE FROM scoring WHERE article_id IN (SELECT id FROM articles WHERE processed = 1)');
+        await this.run('DELETE FROM articles WHERE processed = 1');
+        this.logger.info('Тестовые данные очищены');
+    }
+
+    /**
+     * Поиск статьи по URL
+     */
+    async findArticleByUrl(url) {
+        return await this.get('SELECT * FROM articles WHERE url = ?', [url]);
+    }
+
+    /**
+     * Поиск статьи по хешу
+     */
+    async findArticleByHash(contentHash) {
+        return await this.get('SELECT * FROM articles WHERE content_hash = ?', [contentHash]);
+    }
+
+    /**
+     * Поиск похожих заголовков
+     */
+    async findSimilarTitles(title) {
+        return await this.all(`
+            SELECT title FROM articles 
+            WHERE title != ? AND published_date >= datetime('now', '-30 days')
+            LIMIT 10
+        `, [title]);
+    }
+
+    /**
      * Закрытие соединения с базой данных
      */
     async close() {
