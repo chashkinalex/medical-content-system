@@ -10,6 +10,7 @@
     "collect": "echo '📥 Сбор контента...' && node index.js collect",
     "collect:test": "echo '🧪 Тестирование сбора контента...' && node scripts/test-collection.js",
     "test:integrated": "echo '🔗 Тестирование интегрированной системы...' && node scripts/test-integrated-collection.js",
+    "list:sources": "echo '📚 Список всех источников...' && node scripts/list-sources.js",
     "init:sources": "echo '🔧 Инициализация источников...' && node scripts/init-sources.js",
     "extract:telegram": "echo '📱 Извлечение Telegram каналов...' && node scripts/extract-telegram-channels.js",
     "setup:telegram": "echo '⚙️ Настройка telegram-to-rss...' && node scripts/setup-telegram-to-rss.js",

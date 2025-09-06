@@ -540,6 +540,83 @@
       "tags": ["cdc", "public-health", "surveillance"]
     },
     {
+      "id": "acc",
+      "name": "American College of Cardiology",
+      "url": "https://www.acc.org/rss",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "cardiology", "guidelines", "clinical-practice"]
+    },
+    {
+      "id": "aha",
+      "name": "American Heart Association",
+      "url": "https://www.heart.org/rss",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "cardiology", "guidelines", "prevention"]
+    },
+    {
+      "id": "heart_rhythm_society",
+      "name": "Heart Rhythm Society",
+      "url": "https://www.hrsonline.org/rss",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "cardiology", "arrhythmia", "guidelines"]
+    },
+    {
+      "id": "european_heart_journal",
+      "name": "European Heart Journal",
+      "url": "https://academic.oup.com/eurheartj/rss/current",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "cardiology", "european", "top-journal"]
+    },
+    {
+      "id": "jacc",
+      "name": "Journal of the American College of Cardiology",
+      "url": "https://www.jacc.org/rss",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "cardiology", "american", "top-journal"]
+    },
+    {
+      "id": "circulation",
+      "name": "Circulation",
+      "url": "https://www.ahajournals.org/journal/circ/rss",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "cardiology", "aha", "top-journal"]
+    },
+    {
+      "id": "medscape_cardiology",
+      "name": "Medscape Cardiology",
+      "url": "https://www.medscape.com/rss/section/cardiology",
+      "level": "B",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "cardiology", "cme", "clinical"]
+    },
+    {
       "id": "telegram_cardiology",
       "name": "Telegram Cardiology Channels",
       "url": "http://localhost:8080/cardiology",
@@ -549,6 +626,83 @@
       "enabled": true,
       "updateInterval": 300000,
       "tags": ["telegram", "cardiology", "social", "professional"]
+    },
+    {
+      "id": "aap",
+      "name": "American Academy of Pediatrics",
+      "url": "https://www.aap.org/rss",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "pediatrics", "guidelines", "clinical-practice"]
+    },
+    {
+      "id": "espgahn",
+      "name": "European Society for Paediatric Gastroenterology, Hepatology and Nutrition",
+      "url": "https://www.espghan.org/rss",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "pediatrics", "gastroenterology", "guidelines"]
+    },
+    {
+      "id": "espr",
+      "name": "European Society for Paediatric Research",
+      "url": "https://www.espr.eu/rss",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "pediatrics", "research", "european"]
+    },
+    {
+      "id": "pediatrics_journal",
+      "name": "Pediatrics",
+      "url": "https://publications.aap.org/pediatrics/rss",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "pediatrics", "aap", "top-journal"]
+    },
+    {
+      "id": "jama_pediatrics",
+      "name": "JAMA Pediatrics",
+      "url": "https://jamanetwork.com/journals/jamapediatrics/rss",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "pediatrics", "jama", "top-journal"]
+    },
+    {
+      "id": "pediatric_research",
+      "name": "Pediatric Research",
+      "url": "https://www.nature.com/pr/rss",
+      "level": "A",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "pediatrics", "research", "nature"]
+    },
+    {
+      "id": "medscape_pediatrics",
+      "name": "Medscape Pediatrics",
+      "url": "https://www.medscape.com/rss/section/pediatrics",
+      "level": "B",
+      "specialization": "pediatrics",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "pediatrics", "cme", "clinical"]
     },
     {
       "id": "telegram_pediatrics",
@@ -562,6 +716,94 @@
       "tags": ["telegram", "pediatrics", "social", "professional"]
     },
     {
+      "id": "aga",
+      "name": "American Gastroenterological Association",
+      "url": "https://www.gastro.org/rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gastroenterology", "guidelines", "clinical-practice"]
+    },
+    {
+      "id": "ueg",
+      "name": "United European Gastroenterology",
+      "url": "https://www.ueg.eu/rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gastroenterology", "european", "guidelines"]
+    },
+    {
+      "id": "acg",
+      "name": "American College of Gastroenterology",
+      "url": "https://gi.org/rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gastroenterology", "clinical", "guidelines"]
+    },
+    {
+      "id": "asge",
+      "name": "American Society for Gastrointestinal Endoscopy",
+      "url": "https://www.asge.org/rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gastroenterology", "endoscopy", "guidelines"]
+    },
+    {
+      "id": "gastroenterology_journal",
+      "name": "Gastroenterology",
+      "url": "https://www.gastrojournal.org/rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gastroenterology", "aga", "top-journal"]
+    },
+    {
+      "id": "gut_journal",
+      "name": "Gut",
+      "url": "https://gut.bmj.com/rss/current.xml",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gastroenterology", "bmj", "top-journal"]
+    },
+    {
+      "id": "clinical_gastroenterology_hepatology",
+      "name": "Clinical Gastroenterology and Hepatology",
+      "url": "https://www.cghjournal.org/rss",
+      "level": "A",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gastroenterology", "clinical", "top-journal"]
+    },
+    {
+      "id": "medscape_gastroenterology",
+      "name": "Medscape Gastroenterology",
+      "url": "https://www.medscape.com/rss/section/gastroenterology",
+      "level": "B",
+      "specialization": "gastroenterology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "gastroenterology", "cme", "clinical"]
+    },
+    {
       "id": "telegram_gastroenterology",
       "name": "Telegram Gastroenterology Channels",
       "url": "http://localhost:8080/gastroenterology",
@@ -571,6 +813,105 @@
       "enabled": true,
       "updateInterval": 300000,
       "tags": ["telegram", "gastroenterology", "social", "professional"]
+    },
+    {
+      "id": "endocrine_society",
+      "name": "Endocrine Society",
+      "url": "https://www.endocrine.org/rss",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "endocrinology", "guidelines", "clinical-practice"]
+    },
+    {
+      "id": "aace",
+      "name": "American Association of Clinical Endocrinology",
+      "url": "https://www.aace.com/rss",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "endocrinology", "clinical", "guidelines"]
+    },
+    {
+      "id": "ese",
+      "name": "European Society of Endocrinology",
+      "url": "https://www.ese-hormones.org/rss",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "endocrinology", "european", "guidelines"]
+    },
+    {
+      "id": "ata",
+      "name": "American Thyroid Association",
+      "url": "https://www.thyroid.org/rss",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "endocrinology", "thyroid", "guidelines"]
+    },
+    {
+      "id": "society_endocrinology_uk",
+      "name": "Society for Endocrinology (UK)",
+      "url": "https://www.endocrinology.org/rss",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "endocrinology", "uk", "guidelines"]
+    },
+    {
+      "id": "lancet_diabetes_endocrinology",
+      "name": "The Lancet Diabetes & Endocrinology",
+      "url": "https://www.thelancet.com/rssfeed/lancet-diabetes-endocrinology_current.xml",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "endocrinology", "diabetes", "top-journal"]
+    },
+    {
+      "id": "nature_reviews_endocrinology",
+      "name": "Nature Reviews Endocrinology",
+      "url": "https://www.nature.com/nrendo.rss",
+      "level": "A",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "endocrinology", "reviews", "top-journal"]
+    },
+    {
+      "id": "medscape_endocrinology",
+      "name": "Medscape Diabetes & Endocrinology",
+      "url": "https://www.medscape.com/rss/section/endocrinology",
+      "level": "B",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "endocrinology", "diabetes", "cme"]
+    },
+    {
+      "id": "healio_endocrinology",
+      "name": "Healio Endocrinology Today",
+      "url": "https://www.healio.com/endocrinology/rss",
+      "level": "B",
+      "specialization": "endocrinology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "endocrinology", "devices", "drugs"]
     },
     {
       "id": "telegram_endocrinology",
@@ -584,6 +925,94 @@
       "tags": ["telegram", "endocrinology", "social", "professional"]
     },
     {
+      "id": "acog",
+      "name": "American College of Obstetricians and Gynecologists",
+      "url": "https://www.acog.org/rss",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gynecology", "guidelines", "clinical-practice"]
+    },
+    {
+      "id": "eshre",
+      "name": "European Society of Human Reproduction and Embryology",
+      "url": "https://www.eshre.eu/rss",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gynecology", "reproduction", "guidelines"]
+    },
+    {
+      "id": "asrm",
+      "name": "American Society for Reproductive Medicine",
+      "url": "https://www.asrm.org/rss",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gynecology", "reproduction", "guidelines"]
+    },
+    {
+      "id": "figo",
+      "name": "International Federation of Gynecology and Obstetrics",
+      "url": "https://www.figo.org/rss",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "gynecology", "international", "guidelines"]
+    },
+    {
+      "id": "fertility_sterility",
+      "name": "Fertility and Sterility",
+      "url": "https://www.fertstert.org/rss",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gynecology", "reproduction", "top-journal"]
+    },
+    {
+      "id": "human_reproduction",
+      "name": "Human Reproduction",
+      "url": "https://academic.oup.com/humrep/rss/current",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gynecology", "reproduction", "top-journal"]
+    },
+    {
+      "id": "obstetrics_gynecology",
+      "name": "Obstetrics & Gynecology",
+      "url": "https://journals.lww.com/greenjournal/rss",
+      "level": "A",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "gynecology", "acog", "top-journal"]
+    },
+    {
+      "id": "medscape_gynecology",
+      "name": "Medscape Obstetrics & Gynecology",
+      "url": "https://www.medscape.com/rss/section/obstetrics-gynecology",
+      "level": "B",
+      "specialization": "gynecology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "gynecology", "cme", "clinical"]
+    },
+    {
       "id": "telegram_gynecology",
       "name": "Telegram Gynecology Channels",
       "url": "http://localhost:8080/gynecology",
@@ -595,6 +1024,94 @@
       "tags": ["telegram", "gynecology", "social", "professional"]
     },
     {
+      "id": "aan",
+      "name": "American Academy of Neurology",
+      "url": "https://www.aan.com/rss",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "neurology", "guidelines", "clinical-practice"]
+    },
+    {
+      "id": "ean",
+      "name": "European Academy of Neurology",
+      "url": "https://www.ean.org/rss",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "neurology", "european", "guidelines"]
+    },
+    {
+      "id": "ilae",
+      "name": "International League Against Epilepsy",
+      "url": "https://www.ilae.org/rss",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "neurology", "epilepsy", "guidelines"]
+    },
+    {
+      "id": "movement_disorder_society",
+      "name": "Movement Disorder Society",
+      "url": "https://www.movementdisorders.org/rss",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "neurology", "movement-disorders", "guidelines"]
+    },
+    {
+      "id": "brain_journal",
+      "name": "Brain",
+      "url": "https://academic.oup.com/brain/rss/current",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "neurology", "research", "top-journal"]
+    },
+    {
+      "id": "annals_neurology",
+      "name": "Annals of Neurology",
+      "url": "https://onlinelibrary.wiley.com/journal/15318249/rss",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "neurology", "research", "top-journal"]
+    },
+    {
+      "id": "neurology_journal",
+      "name": "Neurology",
+      "url": "https://n.neurology.org/rss",
+      "level": "A",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "neurology", "aan", "top-journal"]
+    },
+    {
+      "id": "medscape_neurology",
+      "name": "Medscape Neurology",
+      "url": "https://www.medscape.com/rss/section/neurology",
+      "level": "B",
+      "specialization": "neurology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "neurology", "cme", "clinical"]
+    },
+    {
       "id": "telegram_neurology",
       "name": "Telegram Neurology Channels",
       "url": "http://localhost:8080/neurology",
@@ -604,6 +1121,94 @@
       "enabled": true,
       "updateInterval": 300000,
       "tags": ["telegram", "neurology", "social", "professional"]
+    },
+    {
+      "id": "acp",
+      "name": "American College of Physicians",
+      "url": "https://www.acponline.org/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "therapy", "internal-medicine", "guidelines"]
+    },
+    {
+      "id": "easl",
+      "name": "European Association for the Study of the Liver",
+      "url": "https://www.easl.eu/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "therapy", "hepatology", "guidelines"]
+    },
+    {
+      "id": "ats",
+      "name": "American Thoracic Society",
+      "url": "https://www.thoracic.org/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "therapy", "pulmonology", "guidelines"]
+    },
+    {
+      "id": "ers",
+      "name": "European Respiratory Society",
+      "url": "https://www.ersnet.org/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["society", "therapy", "pulmonology", "european"]
+    },
+    {
+      "id": "archives_internal_medicine",
+      "name": "Archives of Internal Medicine",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "therapy", "internal-medicine", "top-journal"]
+    },
+    {
+      "id": "mayo_clinic_proceedings",
+      "name": "Mayo Clinic Proceedings",
+      "url": "https://www.mayoclinicproceedings.org/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "therapy", "clinical", "top-journal"]
+    },
+    {
+      "id": "annals_internal_medicine",
+      "name": "Annals of Internal Medicine",
+      "url": "https://www.acpjournals.org/journal/aim/rss",
+      "level": "A",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["journal", "therapy", "internal-medicine", "top-journal"]
+    },
+    {
+      "id": "medscape_internal_medicine",
+      "name": "Medscape Internal Medicine",
+      "url": "https://www.medscape.com/rss/section/internal-medicine",
+      "level": "B",
+      "specialization": "therapy",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["news", "therapy", "internal-medicine", "cme"]
     },
     {
       "id": "telegram_therapy",
