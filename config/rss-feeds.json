@@ -1,0 +1,122 @@
+{
+  "feeds": [
+    {
+      "id": "nejm",
+      "name": "New England Journal of Medicine",
+      "url": "https://www.nejm.org/action/showFeed?type=etoc&feed=rss",
+      "level": "A",
+      "specialization": "general",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["top-journal", "clinical", "research"]
+    },
+    {
+      "id": "lancet",
+      "name": "The Lancet",
+      "url": "https://www.thelancet.com/rssfeed/lancet_current.xml",
+      "level": "A",
+      "specialization": "general",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["top-journal", "clinical", "research"]
+    },
+    {
+      "id": "jama",
+      "name": "Journal of the American Medical Association",
+      "url": "https://jamanetwork.com/rss/site_1/1.xml",
+      "level": "A",
+      "specialization": "general",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["top-journal", "clinical", "research"]
+    },
+    {
+      "id": "bmj",
+      "name": "British Medical Journal",
+      "url": "https://www.bmj.com/rss/current.xml",
+      "level": "A",
+      "specialization": "general",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["top-journal", "clinical", "research"]
+    },
+    {
+      "id": "cochrane",
+      "name": "Cochrane Library",
+      "url": "https://www.cochranelibrary.com/rss",
+      "level": "B",
+      "specialization": "general",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 7200000,
+      "tags": ["systematic-review", "evidence-based"]
+    },
+    {
+      "id": "esc",
+      "name": "European Society of Cardiology",
+      "url": "https://www.escardio.org/rss",
+      "level": "A",
+      "specialization": "cardiology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "cardiology", "society"]
+    },
+    {
+      "id": "esmo",
+      "name": "European Society for Medical Oncology",
+      "url": "https://www.esmo.org/rss",
+      "level": "A",
+      "specialization": "oncology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "oncology", "society"]
+    },
+    {
+      "id": "eau",
+      "name": "European Association of Urology",
+      "url": "https://uroweb.org/rss",
+      "level": "A",
+      "specialization": "urology",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 3600000,
+      "tags": ["guidelines", "urology", "society"]
+    },
+    {
+      "id": "pubmed",
+      "name": "PubMed Central",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/rss/search/",
+      "level": "A",
+      "specialization": "general",
+      "language": "en",
+      "enabled": true,
+      "updateInterval": 1800000,
+      "tags": ["research", "pubmed", "open-access"]
+    },
+    {
+      "id": "minzdrav",
+      "name": "Минздрав России",
+      "url": "https://minzdrav.gov.ru/rss",
+      "level": "E",
+      "specialization": "general",
+      "language": "ru",
+      "enabled": true,
+      "updateInterval": 7200000,
+      "tags": ["regulations", "russia", "ministry"]
+    }
+  ],
+  "settings": {
+    "defaultUpdateInterval": 3600000,
+    "maxRetries": 3,
+    "timeout": 30000,
+    "userAgent": "MedicalContentSystem/1.0",
+    "enableCaching": true,
+    "cacheExpiry": 300000
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "templates": {
+    "guidelines_update": {
+      "name": "Что нового в рекомендациях",
+      "format": "card",
+      "maxLength": 2000,
+      "structure": {
+        "header": "📋 **{title}**",
+        "subtitle": "**{source}** • {date}",
+        "summary": "**TL;DR:** {summary}",
+        "changes": "**Что изменилось:**\n{changes}",
+        "applicability": "**Кому применять:** {applicability}",
+        "exceptions": "**Исключения:** {exceptions}",
+        "action": "**Что сделать завтра:** {action}",
+        "source": "📖 [Читать полностью]({url})"
+      },
+      "required": ["title", "source", "summary", "changes"],
+      "optional": ["applicability", "exceptions", "action"]
+    },
+    "trial_analysis": {
+      "name": "Разбор исследования",
+      "format": "analysis",
+      "maxLength": 1500,
+      "structure": {
+        "header": "🔬 **{title}**",
+        "subtitle": "**{journal}** • {date}",
+        "question": "**Вопрос:** {question}",
+        "design": "**Дизайн:** {design}",
+        "population": "**Популяция:** {population}",
+        "outcomes": "**Исходы:** {outcomes}",
+        "results": "**Результат:** {results}",
+        "limitations": "**Ограничения:** {limitations}",
+        "conclusion": "**Вывод:** {conclusion}",
+        "source": "📖 [PubMed]({pubmed_url})"
+      },
+      "required": ["title", "journal", "question", "results", "conclusion"],
+      "optional": ["design", "population", "outcomes", "limitations"]
+    },
+    "clinical_case": {
+      "name": "Клинический кейс",
+      "format": "case",
+      "maxLength": 1800,
+      "structure": {
+        "header": "🏥 **Клинический кейс**",
+        "presentation": "**Жалобы:** {complaints}\n**Анамнез:** {history}",
+        "examination": "**Обследование:** {examination}",
+        "question": "**Вопрос:** {question}",
+        "options": "**Варианты:**\n{options}",
+        "analysis": "**Разбор:** {analysis}",
+        "takeaway": "**Запомнить:** {takeaway}",
+        "poll": "🤔 **Ваш выбор?**"
+      },
+      "required": ["complaints", "history", "question", "analysis", "takeaway"],
+      "optional": ["examination", "options"]
+    },
+    "practice_pearl": {
+      "name": "Жемчуг практики",
+      "format": "pearl",
+      "maxLength": 800,
+      "structure": {
+        "header": "💎 **Жемчуг практики**",
+        "insight": "**{insight}**",
+        "context": "{context}",
+        "application": "**Применение:** {application}",
+        "evidence": "**Доказательства:** {evidence}",
+        "source": "📖 {source}"
+      },
+      "required": ["insight", "application"],
+      "optional": ["context", "evidence", "source"]
+    },
+    "myth_fact": {
+      "name": "Миф/Факт",
+      "format": "myth_fact",
+      "maxLength": 1200,
+      "structure": {
+        "header": "❓ **Миф или факт?**",
+        "statement": "**{statement}**",
+        "answer": "**{answer}**",
+        "explanation": "{explanation}",
+        "evidence": "**Доказательства:** {evidence}",
+        "takeaway": "**Запомнить:** {takeaway}",
+        "source": "📖 {source}"
+      },
+      "required": ["statement", "answer", "explanation"],
+      "optional": ["evidence", "takeaway", "source"]
+    },
+    "tool_of_day": {
+      "name": "Инструмент дня",
+      "format": "tool",
+      "maxLength": 1000,
+      "structure": {
+        "header": "🛠️ **Инструмент дня**",
+        "name": "**{tool_name}**",
+        "description": "{description}",
+        "usage": "**Применение:** {usage}",
+        "access": "**Доступ:** {access}",
+        "features": "**Возможности:** {features}",
+        "link": "🔗 [Использовать]({url})"
+      },
+      "required": ["tool_name", "description", "usage"],
+      "optional": ["access", "features"]
+    },
+    "congress_news": {
+      "name": "Карта конгресса",
+      "format": "congress",
+      "maxLength": 1500,
+      "structure": {
+        "header": "🏛️ **{congress_name}**",
+        "date": "**Дата:** {date}",
+        "location": "**Место:** {location}",
+        "highlights": "**Основные темы:**\n{highlights}",
+        "key_findings": "**Ключевые находки:**\n{key_findings}",
+        "implications": "**Практические выводы:** {implications}",
+        "source": "📖 [Подробнее]({url})"
+      },
+      "required": ["congress_name", "date", "highlights"],
+      "optional": ["location", "key_findings", "implications"]
+    },
+    "drug_safety": {
+      "name": "Лекарственная безопасность",
+      "format": "safety",
+      "maxLength": 1400,
+      "structure": {
+        "header": "⚠️ **Безопасность лекарств**",
+        "drug": "**Препарат:** {drug_name}",
+        "alert": "**Предупреждение:** {alert}",
+        "details": "{details}",
+        "recommendations": "**Рекомендации:** {recommendations}",
+        "monitoring": "**Мониторинг:** {monitoring}",
+        "source": "📖 [Источник]({url})"
+      },
+      "required": ["drug_name", "alert", "recommendations"],
+      "optional": ["details", "monitoring"]
+    },
+    "career_management": {
+      "name": "Карьера/менеджмент",
+      "format": "career",
+      "maxLength": 1200,
+      "structure": {
+        "header": "💼 **Карьера и менеджмент**",
+        "topic": "**{topic}**",
+        "content": "{content}",
+        "tips": "**Советы:** {tips}",
+        "resources": "**Ресурсы:** {resources}",
+        "action": "**Действие:** {action}",
+        "source": "📖 {source}"
+      },
+      "required": ["topic", "content"],
+      "optional": ["tips", "resources", "action"]
+    }
+  },
+  "settings": {
+    "defaultMaxLength": 2000,
+    "enableEmojis": true,
+    "enableMarkdown": true,
+    "enableLinks": true,
+    "maxLinksPerPost": 3,
+    "disclaimer": "⚠️ Информация предназначена для образовательных целей. Консультируйтесь с врачом по клиническим вопросам."
+  }
+}
